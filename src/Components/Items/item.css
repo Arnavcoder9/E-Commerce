@@ -1,25 +1,60 @@
 .item {
-  width: 350px;
+  width: 100%;
+  max-width: 350px; /* Ensures it doesn’t get too big */
+  transition: transform 0.6s ease-in-out;
 }
+
 .item p {
   margin: 6px 0px;
 }
+
 .item-price {
   display: flex;
-  gap: 20px;
+  gap: 10px; /* Reduced for better spacing */
 }
+
 .item-price-new {
   color: #374151;
-  font-size: 18x;
+  font-size: 18px; /* Fixed typo */
   font-weight: 600;
 }
+
 .item-price-old {
   color: #8c8c8c;
   font-size: 18px;
   font-weight: 500;
   text-decoration: line-through;
 }
+
 .item:hover {
   transform: scale(1.05);
-  transition: 0.6s;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .item {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    max-width: 250px;
+  }
+
+  .item-price-new,
+  .item-price-old {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    max-width: 100%; /* Takes full width on small screens */
+    text-align: center; /* Centers content for better UX */
+  }
+
+  .item-price {
+    justify-content: center; /* Aligns prices in center */
+  }
 }

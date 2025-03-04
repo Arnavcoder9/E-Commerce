@@ -1,19 +1,28 @@
+/* 🔹 Navbar Container */
 .navbar {
   display: flex;
-  justify-content: space-around;
-  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
   box-shadow: 0 1px 3px -2px black;
+  position: relative;
+  z-index: 1000; /* Keeps navbar above all elements */
 }
+
+/* 🔹 Logo Styling */
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .nav-logo p {
   color: #171717;
   font-size: 32px;
   font-weight: 600;
 }
+
+/* 🔹 Navigation Menu */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -23,6 +32,8 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+/* 🔹 Active Item Indicator */
 .nav-menu li {
   display: flex;
   flex-direction: column;
@@ -31,6 +42,7 @@
   gap: 2px;
   cursor: pointer;
 }
+
 .nav-menu hr {
   border: none;
   width: 60%;
@@ -38,11 +50,14 @@
   border-radius: 10px;
   background: #ff4141;
 }
+
+/* 🔹 Login & Cart Section */
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
+
 .nav-login-cart button {
   height: 50px;
   width: 140px;
@@ -55,9 +70,11 @@
   background: white;
   cursor: pointer;
 }
+
 .nav-login-cart button:active {
   background: #f3f3f3;
 }
+
 .nav-cart-count {
   width: 20px;
   height: 20px;
@@ -70,4 +87,70 @@
   font-size: 12px;
   background: red;
   color: white;
+}
+
+/* 🔹 Mobile Responsive Design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 20px; /* Reduce spacing */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 3%;
+  }
+
+  /* ✅ Fix Overlapping Issue */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Covers full screen */
+    background: rgba(255, 255, 255, 0.95); /* Light background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999; /* Ensures menu is above other content */
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .nav-menu li {
+    padding: 15px 0;
+    font-size: 22px;
+  }
+
+  .nav-login-cart {
+    gap: 10px;
+  }
+
+  .nav-login-cart button {
+    width: 120px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo p {
+    font-size: 26px; /* Adjust logo size */
+  }
+
+  .nav-login-cart button {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .nav-cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
 }

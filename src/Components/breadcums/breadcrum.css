@@ -5,6 +5,23 @@
   color: #5e5e5e;
   font-size: 16px;
   font-weight: 600;
-  margin: 60px 170px;
+  margin: 60px auto; /* Centered */
+  width: 90%;
+  max-width: 1200px; /* Ensures it doesn't get too wide */
   text-transform: capitalize;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+  .breadcrum {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    margin: 30px auto; /* Less margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrum {
+    font-size: 12px; /* Further reduce font size for mobile */
+    gap: 5px; /* Less space between items */
+  }
 }

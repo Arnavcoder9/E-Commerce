@@ -3,21 +3,58 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  height: 90vh;
+  height: auto; /* Remove fixed height */
+  padding: 50px 20px; /* Add padding for spacing */
+  text-align: center;
 }
+
 .popular h1 {
   color: #171717;
   font-size: 50px;
   font-weight: 600;
 }
+
 .popular hr {
   width: 200px;
   height: 6px;
   border-radius: 10px;
   background: #252525;
 }
+
 .popular-item {
   margin-top: 50px;
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
   gap: 30px;
+  justify-content: center;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .popular h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popular h1 {
+    font-size: 40px;
+  }
+
+  .popular-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popular h1 {
+    font-size: 32px;
+  }
+
+  .popular hr {
+    width: 150px;
+    height: 4px;
+  }
 }

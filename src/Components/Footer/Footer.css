@@ -3,52 +3,109 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
+  padding: 40px 20px;
+  text-align: center;
 }
+
+/* Logo */
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
+
 .footer-logo p {
   color: #383838;
-  font-size: 46px;
+  font-size: 36px; /* Reduced for better responsiveness */
   font-weight: 700;
 }
+
+/* Footer Links */
 .footer-links {
   display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  justify-content: center;
   list-style: none;
-  gap: 50px;
+  gap: 30px;
   color: #252525;
-  font-size: 20px;
+  font-size: 18px;
 }
+
 .footer-links li {
   cursor: pointer;
 }
+
+/* Social Icons */
 .footer-social-icon {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
+
 .footer-icons-container {
-  padding: 10px;
-  padding-bottom: 6px;
+  padding: 8px;
   background: #fbfbfb;
   border: 1px solid #ebebeb;
+  border-radius: 5px;
 }
+
+/* Copyright */
 .footer-copyright {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #1a1a1a;
-  font-size: 20px;
+  font-size: 16px;
 }
+
 .footer-copyright hr {
   width: 80%;
   border: none;
   border-radius: 10px;
   height: 3px;
   background: #c7c7c7;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-logo p {
+    font-size: 28px; /* Reduce logo text size */
+  }
+
+  .footer-links {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .footer-social-icon {
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo p {
+    font-size: 24px;
+  }
+
+  .footer-links {
+    flex-direction: column; /* Stack links on small screens */
+    gap: 15px;
+  }
+
+  .footer-social-icon {
+    gap: 8px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    gap: 10px;
+  }
 }
