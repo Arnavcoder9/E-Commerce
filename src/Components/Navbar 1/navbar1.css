@@ -1,0 +1,175 @@
+/* 🔹 Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  box-shadow: 0 1px 3px -2px black;
+  position: relative;
+  z-index: 1000;
+}
+
+/* 🔹 Left Section (Logo & Menu Button) */
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 🔹 Logo Styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo p {
+  color: #171717;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* 🔹 Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  color: #626262;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-menu li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.nav-menu hr {
+  border: none;
+  width: 60%;
+  height: 2px;
+  border-radius: 10px;
+  background: #ff4141;
+}
+
+/* 🔹 Login & Cart Section */
+.nav-login-cart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 🔹 Login Button */
+.nav-login-cart button {
+  height: 50px;
+  width: 140px;
+  outline: none;
+  border: 1px solid #7a7a7a;
+  border-radius: 75px;
+  color: #515151;
+  font-size: 18px;
+  font-weight: 500;
+  background: white;
+  cursor: pointer;
+}
+
+.nav-login-cart button:active {
+  background: #f3f3f3;
+}
+
+/* 🔹 Cart Count */
+.nav-cart-count {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  margin-left: -40px;
+  border-radius: 10px;
+  font-size: 12px;
+  background: red;
+  color: white;
+}
+
+/* 🔹 Menu Button (☰) */
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* ✅ Moves below the logo */
+}
+
+/* 🔹 Mobile Responsive Design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 3%;
+  }
+
+  .nav-left {
+    align-items: flex-start;
+  }
+
+  /* ✅ Show menu button on mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* ✅ Hide the menu by default in mobile */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 100px; /* ✅ Below logo */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* ✅ Show menu when button is clicked */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    padding: 15px 0;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo p {
+    font-size: 26px;
+  }
+
+  .nav-login-cart button {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .nav-cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+}
